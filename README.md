@@ -1,6 +1,6 @@
 # github-actions-badge [![Actions Status](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)
 
-Generate GitHub Actions badge Markdown code.
+A command line tool that generate GitHub Actions badge Markdown code.
 
 ## Install
 
