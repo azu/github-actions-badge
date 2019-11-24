@@ -3,13 +3,14 @@ import { fetchRepositoryInfo, generate } from "./github-actions-badge";
 
 const cli = meow(`
     Usage
-      $ migrate-hatenabookmark-to-asocial-bookmark --hatena <user-name>
+      $ github-actions-badge
  
     Options
-      --hatena Hatena User name
+      --format "markdown"
  
     Examples
-      $ migrate-hatenabookmark-to-asocial-bookmark --hatena test
+      # Copy GitHub Action as Markdown format
+      $ github-actions-badge | pbcopy
 `, {
     flags: {
         format: {
