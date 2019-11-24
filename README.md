@@ -20,6 +20,13 @@ Install with [npm](https://www.npmjs.com/):
       # Copy GitHub Action as Markdown format
       $ github-actions-badge | pbcopy
 
+**Example**
+
+```
+$ github-actions-badge
+[![Actions Status](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)
+```
+
 ## Changelog
 
 See [Releases page](https://github.com/azu/github-actions-badge/releases).
