@@ -1,0 +1,80 @@
+{
+  "name": "github-actions-badge",
+  "version": "1.0.0",
+  "description": "Generate GitHub Actions badge Markdown code.",
+  "keywords": [
+    "actions",
+    "copy",
+    "generate",
+    "github",
+    "markdown"
+  ],
+  "homepage": "https://github.com/azu/github-actions-badge",
+  "bugs": {
+    "url": "https://github.com/azu/github-actions-badge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/github-actions-badge.git"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "bin": {
+    "github-actions-badge": "./bin/cmd.js"
+  },
+  "main": "lib/github-actions-badge.js",
+  "types": "lib/github-actions-badge.d.ts",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "clean": "rimraf lib/",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha \"test/**/*.ts\"",
+    "watch": "tsc -p . --watch"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/hosted-git-info": "^2.7.0",
+    "@types/js-yaml": "^3.12.1",
+    "@types/meow": "^5.0.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.12",
+    "cross-env": "^6.0.3",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.5.2",
+    "ts-node-test-register": "^8.0.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "git-remote-origin-url": "^3.0.0",
+    "glob": "^7.1.6",
+    "hosted-git-info": "^3.0.2",
+    "js-yaml": "^3.13.1",
+    "meow": "^5.0.0"
+  }
+}
