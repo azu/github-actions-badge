@@ -2,6 +2,8 @@
 
 A command line tool that generate GitHub Actions badge Markdown code.
 
+- https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
