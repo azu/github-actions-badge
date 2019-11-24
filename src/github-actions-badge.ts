@@ -36,6 +36,7 @@ export const generate = (options: generateOptions): string => {
         }
         return content.name;
     }).map(workflowName => {
+        // --format "markdown"
         // https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_NAME>/badge.svg
         return `[![Actions Status](https://github.com/${options.owner}/${options.repo}/workflows/${encodeURIComponent(workflowName)}/badge.svg)](https://github.com/${options.owner}/${options.repo}/actions?query=workflow%3A${encodeURIComponent(workflowName)})`;
     }).join("\n");
