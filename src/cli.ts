@@ -1,5 +1,4 @@
 const meow = require("meow");
-const { migrate } = require("../lib/cli/migrate-hatenabookmark-to-asocial-bookmark");
 import { fetchRepositoryInfo, generate } from "./github-actions-badge";
 
 const cli = meow(`
