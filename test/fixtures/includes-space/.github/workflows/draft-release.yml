@@ -1,0 +1,15 @@
+name: Make draft release package
+
+on:
+  push:
+    tags:
+      - 'draft/v*' # e.g. draft/v2_6_4
+  repository_dispatch:
+    types:
+      - "refs/tags/v*" # e.g. refs/tags/v2_6_4
+
+jobs:
+  dump-context:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env | sort

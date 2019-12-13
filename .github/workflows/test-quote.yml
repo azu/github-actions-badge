@@ -1,0 +1,12 @@
+name: "test quote space's"
+
+on: [push, pull_request]
+env:
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: # none

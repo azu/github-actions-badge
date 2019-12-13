@@ -13,4 +13,14 @@ describe("github-actions-badge", function() {
         assert.strictEqual(codes, `[![Actions Status](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)`
         );
     });
+    it("should return badge codes that replace includes-space with +", () => {
+        const codes = generate({
+            owner: "ruby",
+            repo: "actions",
+            cwd: path.join(__dirname, "fixtures/includes-space"),
+            format: "markdown"
+        });
+        assert.strictEqual(codes, `[![Actions Status](https://github.com/ruby/actions/workflows/Make%20draft%20release%20package/badge.svg)](https://github.com/ruby/actions/actions?query=workflow%3A"Make+draft+release+package")`
+        );
+    });
 });
