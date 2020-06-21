@@ -16,7 +16,7 @@ Install with [npm](https://www.npmjs.com/):
       $ github-actions-badge
  
     Options
-      --format "markdown"
+      --format "markdown", "json"
  
     Examples
       # Copy GitHub Action as Markdown format

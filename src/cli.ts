@@ -1,4 +1,4 @@
-const meow = require("meow");
+import meow from "meow";
 import { fetchRepositoryInfo, generate } from "./github-actions-badge";
 
 const cli = meow(`
@@ -6,7 +6,7 @@ const cli = meow(`
       $ github-actions-badge
  
     Options
-      --format "markdown"
+      --format "markdown", "json"
  
     Examples
       # Copy GitHub Action as Markdown format
@@ -24,6 +24,9 @@ const cli = meow(`
 export const run = async () => {
     const { repo, owner } = await fetchRepositoryInfo();
     const format = cli.flags.format || "markdown";
+    if (format !== "json" && format !== "markdown") {
+        throw new Error(`${format} is unknown format`);
+    }
     const cwd = process.cwd();
     return generate({ cwd, repo, owner, format });
 };
