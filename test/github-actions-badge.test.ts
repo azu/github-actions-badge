@@ -10,8 +10,8 @@ describe("github-actions-badge", function() {
             cwd: path.join(__dirname, ".."),
             format: "markdown"
         });
-        assert.strictEqual(codes, `[![Actions Status: ci](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"ci")
-[![Actions Status: test quote space's](https://github.com/azu/github-actions-badge/workflows/test%20quote%20space's/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"test+quote+space's")`
+        assert.strictEqual(codes, `[![Actions Status: test quote space's](https://github.com/azu/github-actions-badge/workflows/test%20quote%20space's/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"test+quote+space's")
+[![Actions Status: test](https://github.com/azu/github-actions-badge/workflows/test/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"test")`
         );
     });
     it("should return badge codes that replace includes-space with +", () => {
