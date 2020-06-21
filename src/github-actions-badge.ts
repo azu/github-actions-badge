@@ -5,6 +5,8 @@ import yaml from "js-yaml";
 import getRemoteOriginUrl from "git-remote-origin-url";
 import { fromUrl } from "hosted-git-info";
 
+const markdownEscapse = require("markdown-escape");
+
 export interface generateOptions {
     owner: string;
     repo: string;
@@ -30,6 +32,9 @@ export const fetchRepositoryInfo = (): Promise<{ owner: string; repo: string }> 
 const encodeWorkflowNameQuery = (name: string) => {
     return name.replace(/\s/g, "+");
 };
+const encodeMarkdownTitle = (name: string): string => {
+    return markdownEscapse(name);
+};
 export const generate = (options: generateOptions): string => {
     const ymlList = glob.sync(path.join(options.cwd, ".github/workflows/*"), {
         dot: true
@@ -43,6 +48,6 @@ export const generate = (options: generateOptions): string => {
     }).map(workflowName => {
         // --format "markdown"
         // https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_NAME>/badge.svg
-        return `[![Actions Status](https://github.com/${options.owner}/${options.repo}/workflows/${encodeURIComponent(workflowName)}/badge.svg)](https://github.com/${options.owner}/${options.repo}/actions?query=workflow%3A"${encodeWorkflowNameQuery(workflowName)}")`;
+        return `[![Actions Status: ${encodeMarkdownTitle(workflowName)}](https://github.com/${options.owner}/${options.repo}/workflows/${encodeURIComponent(workflowName)}/badge.svg)](https://github.com/${options.owner}/${options.repo}/actions?query=workflow%3A"${encodeWorkflowNameQuery(workflowName)}")`;
     }).join("\n");
 };

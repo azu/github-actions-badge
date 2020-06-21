@@ -10,8 +10,8 @@ describe("github-actions-badge", function() {
             cwd: path.join(__dirname, ".."),
             format: "markdown"
         });
-        assert.strictEqual(codes, `[![Actions Status](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"ci")
-[![Actions Status](https://github.com/azu/github-actions-badge/workflows/test%20quote%20space's/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"test+quote+space's")`
+        assert.strictEqual(codes, `[![Actions Status: ci](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"ci")
+[![Actions Status: test quote space's](https://github.com/azu/github-actions-badge/workflows/test%20quote%20space's/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3A"test+quote+space's")`
         );
     });
     it("should return badge codes that replace includes-space with +", () => {
@@ -21,7 +21,7 @@ describe("github-actions-badge", function() {
             cwd: path.join(__dirname, "fixtures/includes-space"),
             format: "markdown"
         });
-        assert.strictEqual(codes, `[![Actions Status](https://github.com/ruby/actions/workflows/Make%20draft%20release%20package/badge.svg)](https://github.com/ruby/actions/actions?query=workflow%3A"Make+draft+release+package")`
+        assert.strictEqual(codes, `[![Actions Status: Make draft release package](https://github.com/ruby/actions/workflows/Make%20draft%20release%20package/badge.svg)](https://github.com/ruby/actions/actions?query=workflow%3A"Make+draft+release+package")`
         );
     });
 });

@@ -1,4 +1,4 @@
-# github-actions-badge [![Actions Status](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)
+# github-actions-badge [![Actions Status: test](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)
 
 A command line tool that generate GitHub Actions badge Markdown code.
 
@@ -26,7 +26,7 @@ Install with [npm](https://www.npmjs.com/):
 
 ```
 $ github-actions-badge
-[![Actions Status](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)
+[![Actions Status: test](https://github.com/azu/github-actions-badge/workflows/ci/badge.svg)](https://github.com/azu/github-actions-badge/actions?query=workflow%3Aci)
 ```
 
 ## Changelog

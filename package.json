@@ -75,6 +75,7 @@
     "glob": "^7.1.6",
     "hosted-git-info": "^3.0.2",
     "js-yaml": "^3.13.1",
+    "markdown-escape": "^1.1.0",
     "meow": "^5.0.0"
   }
 }
